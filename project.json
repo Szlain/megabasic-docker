@@ -1,0 +1,20 @@
+{
+  "root": "packages/megabasic-docker",
+  "sourceRoot": "packages/megabasic-docker/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+          "command": "docker build ./packages/megabasic-docker -t megabasic-docker:latest"
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+          "command": "docker run --network host megabasic-docker:latest"
+      }
+    }
+  },
+  "tags": []
+}
